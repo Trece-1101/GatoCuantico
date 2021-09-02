@@ -5,33 +5,45 @@ export var speed := 400.0
 export var gravity := 20.0
 export var jump_force := 400.0
 export var wall_jump_force := 600.0
+export var dash_force := 1500.0
 export var max_jumps := 1
 
 var movement := Vector2.ZERO
 var jumps := 0
 var can_jump = true
 var can_wall_jump = false setget set_can_wall_jump
+var can_dash = false setget set_can_dash
 var wall_jumped = false
+var dashed = false
 var input_enabled = false
 
 func set_can_wall_jump(value:bool) -> void:
 	can_wall_jump = value
+
+func set_can_dash(value:bool) -> void:
+	can_dash = value
 
 func _ready() -> void:
 	$AnimatedSprite.play("idle")
 	player_enabled(false)
 	Events.connect("half_room_selected", self, "_on_room_selected")
 	Events.connect("enable_player", self, "_on_room_selected")
+	Events.connect("player_in_portal", self, "disabled_player")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not input_enabled:
 		return
+	
 	if event.is_action_pressed("jump"):
 		manage_jump()
+	elif event.is_action_pressed("dash") and can_dash and not dashed:
+		dash()
 
 func _physics_process(_delta: float) -> void:
-	movement.y += gravity
-	if not wall_jumped:
+	if not dashed:
+		movement.y += gravity
+	
+	if not wall_jumped and not dashed:
 		movement.x = get_horizontal_movement() * speed
 
 	move_and_slide(movement, Vector2.UP)
@@ -54,7 +66,10 @@ func get_horizontal_movement() -> float:
 		if is_on_floor():
 			$AnimatedSprite.play("idle")
 		else:
-			$AnimatedSprite.play("jump")
+			if movement.y < 0:
+				$AnimatedSprite.play("jump")
+			else:
+				$AnimatedSprite.play("fall")
 	else:
 		$AnimatedSprite.scale.x = h_mov
 		$AnimatedSprite.play("run")
@@ -79,7 +94,18 @@ func manage_jump() -> void:
 		can_jump = (max_jumps - jumps)
 		$AnimatedSprite.play("jump")
 		return
-	
+
+func dash() -> void:
+	dashed = true
+	movement = Vector2.ZERO
+	$TweenDash.interpolate_property(
+		self,
+		"movement:x",
+		0.0,
+		dash_force * $AnimatedSprite.scale.x,
+		0.15,Tween.TRANS_LINEAR,Tween.EASE_IN_OUT
+	)
+	$TweenDash.start()
 
 func enter_portal(center:Vector2) -> void:
 	player_enabled(false)
@@ -100,6 +126,11 @@ func enter_portal(center:Vector2) -> void:
 func _on_Tween_tween_all_completed() -> void:
 	Events.emit_signal("player_in_portal")
 
+func disabled_player() -> void:
+	movement = Vector2.ZERO
+	$AnimatedSprite.play("idle")
+	player_enabled(false)
+
 func player_enabled(valor:bool) -> void:
 	set_process(valor)
 	set_physics_process(valor)
@@ -108,7 +139,10 @@ func player_enabled(valor:bool) -> void:
 func _on_room_selected() -> void:
 	player_enabled(true)
 
-
 func _on_InputCooldown_timeout() -> void:
 	input_enabled = true
 	wall_jumped = false
+
+
+func _on_TweenDash_tween_all_completed() -> void:
+	dashed = false

@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://game/levels/LevelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/Fonts/Kenney Bold.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 2 )
+
+[node name="Level1Tutorial" instance=ExtResource( 1 )]
+
+[node name="Door" parent="HalfRoomRed" index="4"]
+position = Vector2( 1600, 576 )
+
+[node name="Player" parent="HalfRoomRed" index="5"]
+position = Vector2( 704, 576 )
+
+[node name="Door" parent="HalfRoomBlue" index="4"]
+position = Vector2( 1600, 576 )
+
+[node name="Player2" parent="HalfRoomBlue" index="5"]
+position = Vector2( 704, 576 )
+
+[node name="PanelTutorial" type="Panel" parent="." index="3"]
+margin_left = 328.0
+margin_top = 72.0
+margin_right = 1204.0
+margin_bottom = 496.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PanelTutorial" index="0"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -422.5
+margin_top = -180.0
+margin_right = 422.5
+margin_bottom = 180.0
+custom_fonts/font = SubResource( 1 )
+text = "Solo puedes observar una habitacion.
+Tienes un tiempo limitado para analizar el escenario y hacerlo.
+Al finalizar el tiempo se seleccionara una al azar.
+El objetivo es llevar a schodi, el de la habitacion que seleccionaste, hasta la puerta.
+Sin embargo el Schodi no seleccionado va a replicar todos los movimientos del otro y solo podras saber si esta vivo o muerto una vez que ingreses a la puerta con 'tu' Schodi."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

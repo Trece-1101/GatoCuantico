@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://game/levels/Level.gd" type="Script" id=1]
+[ext_resource path="res://game/levels/CameraLevel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/rooms/HalfRoomRed.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/rooms/HalfRoomBlue.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/player/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/rooms/Door.tscn" type="PackedScene" id=6]
+
+[node name="LevelBase" type="Node"]
+script = ExtResource( 1 )
+
+[node name="CameraLevel" parent="." instance=ExtResource( 2 )]
+
+[node name="HalfRoomRed" parent="." instance=ExtResource( 3 )]
+
+[node name="Door" parent="HalfRoomRed" instance=ExtResource( 6 )]
+position = Vector2( 1984, 576 )
+
+[node name="Player" parent="HalfRoomRed" instance=ExtResource( 5 )]
+position = Vector2( 128, 576 )
+
+[node name="HalfRoomBlue" parent="." instance=ExtResource( 4 )]
+position = Vector2( 0, 768 )
+
+[node name="Door" parent="HalfRoomBlue" instance=ExtResource( 6 )]
+position = Vector2( 1984, 576 )
+
+[node name="Player2" parent="HalfRoomBlue" instance=ExtResource( 5 )]
+position = Vector2( 128, 576 )

@@ -16,7 +16,7 @@ func get_dir() -> int:
 	return dir
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var left_wall: bool = raycast_up_left.is_colliding() and raycast_down_left.is_colliding()
 	var right_wall: bool= raycast_down_right.is_colliding() and raycast_up_right.is_colliding()
 	is_colliding_wall = left_wall or right_wall
