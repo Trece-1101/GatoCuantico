@@ -13,6 +13,7 @@ var can_jump = true
 func _ready() -> void:
 	$AnimatedSprite.play("idle")
 	player_enabled(false)
+	Events.connect("half_room_selected", self, "_on_room_selected")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump") and can_jump:
@@ -70,3 +71,6 @@ func _on_Tween_tween_all_completed() -> void:
 func player_enabled(valor:bool) -> void:
 	set_process(valor)
 	set_physics_process(valor)
+
+func _on_room_selected() -> void:
+	player_enabled(true)

@@ -1,7 +1,26 @@
 extends Node2D
 
-var blackout = preload("res://game/rooms/BlackOut.tscn").instance()
+onready var blackout_animator:AnimationPlayer = $BlackOut/AnimationPlayer
+var can_blackout := true
+
+func _ready() -> void:
+	Events.connect("half_room_selected", self, "disable_blackout")
+
+func disable_blackout() -> void:
+	can_blackout = false
+
+func dim_in() -> void:
+	if not can_blackout:
+		return
+	blackout_animator.play("dim_in")
+
+func dim_out() -> void:
+	if not can_blackout:
+		return
+	blackout_animator.play_backwards("dim_in")
 
 func give_black_out() -> void:
-	blackout.global_position = global_position - Vector2(0.0, 58.0)
-	add_child(blackout)
+	if not can_blackout:
+		return
+	can_blackout = false
+	blackout_animator.play("fade_in")
