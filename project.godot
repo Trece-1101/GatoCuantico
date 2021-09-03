@@ -14,14 +14,32 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://game/rooms/BlackOut.gd"
 }, {
+"base": "Node2D",
+"class": "LevelResult",
+"language": "GDScript",
+"path": "res://game/gui/LevelResult.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://game/player/Player.gd"
+}, {
+"base": "Node2D",
+"class": "PowerUp",
+"language": "GDScript",
+"path": "res://game/powerups/PowerUp.gd"
+}, {
+"base": "Area2D",
+"class": "Spike",
+"language": "GDScript",
+"path": "res://game/danger/Spike.gd"
 } ]
 _global_script_class_icons={
 "BlackOut": "",
-"Player": ""
+"LevelResult": "",
+"Player": "",
+"PowerUp": "",
+"Spike": ""
 }
 
 [application]
@@ -33,6 +51,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Events="*res://game/autoloads/Events.gd"
+GameData="*res://game/autoloads/GameData.gd"
 
 [debug]
 
@@ -82,6 +101,7 @@ dash={
 2d_physics/layer_1="player"
 2d_physics/layer_2="world"
 2d_physics/layer_3="area_detector"
+2d_physics/layer_4="damage"
 
 [physics]
 

@@ -5,7 +5,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1314.03, 375.962 )
 
-[node name="SelectionArea" type="Area2D"]
+[node name="SelectionArea" type="Area2D" groups=[
+"selection",
+]]
 position = Vector2( 1281.28, 319.612 )
 collision_layer = 4
 collision_mask = 0

@@ -27,24 +27,24 @@ animations = [ {
 "name": "jump",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 12 ) ],
-"loop": true,
-"name": "fall",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "run",
 "speed": 13.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "roll",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 13 ) ],
 "loop": false,
 "name": "dead",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 14 ) ],
+"frames": [ ExtResource( 12 ) ],
 "loop": true,
-"name": "roll",
+"name": "fall",
 "speed": 5.0
 } ]
 

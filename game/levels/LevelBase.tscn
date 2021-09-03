@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://game/levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://game/levels/CameraLevel.tscn" type="PackedScene" id=2]
@@ -6,9 +6,11 @@
 [ext_resource path="res://game/rooms/HalfRoomBlue.tscn" type="PackedScene" id=4]
 [ext_resource path="res://game/player/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/rooms/Door.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/gui/LevelResult.tscn" type="PackedScene" id=7]
 
 [node name="LevelBase" type="Node"]
 script = ExtResource( 1 )
+result_panel = ExtResource( 7 )
 
 [node name="CameraLevel" parent="." instance=ExtResource( 2 )]
 

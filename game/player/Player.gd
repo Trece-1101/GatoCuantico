@@ -16,6 +16,7 @@ var can_dash = false setget set_can_dash
 var wall_jumped = false
 var dashed = false
 var input_enabled = false
+var alive = true
 
 func set_can_wall_jump(value:bool) -> void:
 	can_wall_jump = value
@@ -28,7 +29,7 @@ func _ready() -> void:
 	player_enabled(false)
 	Events.connect("half_room_selected", self, "_on_room_selected")
 	Events.connect("enable_player", self, "_on_room_selected")
-	Events.connect("player_in_portal", self, "disabled_player")
+	Events.connect("player_entering_portal", self, "disabled_player")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not input_enabled:
@@ -108,6 +109,7 @@ func dash() -> void:
 	$TweenDash.start()
 
 func enter_portal(center:Vector2) -> void:
+	Events.emit_signal("player_entering_portal")
 	player_enabled(false)
 	$AnimatedSprite.play("idle")
 	$AnimationPlayer.play("shrink")
@@ -127,9 +129,10 @@ func _on_Tween_tween_all_completed() -> void:
 	Events.emit_signal("player_in_portal")
 
 func disabled_player() -> void:
-	movement = Vector2.ZERO
-	$AnimatedSprite.play("idle")
-	player_enabled(false)
+	if alive:
+		movement = Vector2.ZERO
+		player_enabled(false)
+		$AnimatedSprite.play("idle")
 
 func player_enabled(valor:bool) -> void:
 	set_process(valor)
@@ -143,6 +146,15 @@ func _on_InputCooldown_timeout() -> void:
 	input_enabled = true
 	wall_jumped = false
 
-
 func _on_TweenDash_tween_all_completed() -> void:
 	dashed = false
+
+func die() -> void:
+	alive = false
+	input_enabled = false
+	rotation_degrees = 90
+	$AnimatedSprite.play("dead")
+	if GameData.get_observable_player() == self:
+		Events.emit_signal("player_dead", true)
+	else:
+		Events.emit_signal("player_dead", false)
