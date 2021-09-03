@@ -15,7 +15,7 @@ var can_wall_jump = false setget set_can_wall_jump
 var can_dash = false setget set_can_dash
 var wall_jumped = false
 var dashed = false
-var input_enabled = false
+var input_enabled = false setget set_input_enabled
 var alive = true
 
 func set_max_jumps(value: int) -> void:
@@ -27,12 +27,16 @@ func set_can_wall_jump(value:bool) -> void:
 func set_can_dash(value:bool) -> void:
 	can_dash = value
 
+func set_input_enabled(value: bool) -> void:
+	input_enabled = value
+
 func _ready() -> void:
 	$AnimatedSprite.play("idle")
 	player_enabled(false)
 	Events.connect("half_room_selected", self, "_on_room_selected")
 	Events.connect("enable_player", self, "_on_room_selected")
 	Events.connect("player_entering_portal", self, "disabled_player")
+	Events.connect("enable_player", self, "set_input_enabled")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not input_enabled:

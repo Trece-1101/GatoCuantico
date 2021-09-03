@@ -4,7 +4,6 @@
 [ext_resource path="res://game/menus/Controls.gd" type="Script" id=2]
 [ext_resource path="res://assets/Icons/return.png" type="Texture" id=3]
 
-
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 4.0
 bg_color = Color( 1, 1, 1, 1 )
@@ -18,7 +17,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_vertical_guides_": [ 640.271 ]
 }
-main_menu = "res://game/gui/menus/MainMenu.tscn"
+main_menu = "res://game/menus/MainMenu.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -53,8 +52,7 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_left = 109.0
-margin_right = 674.0
+margin_right = 802.0
 margin_bottom = 80.0
 size_flags_horizontal = 4
 __meta__ = {
@@ -62,34 +60,34 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
-margin_right = 343.0
+margin_right = 281.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 0, 80 )
 custom_fonts/font = SubResource( 2 )
-text = "Rotate ClockWise"
+text = "Mover Izq , Der"
 align = 2
 valign = 1
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
-margin_left = 347.0
-margin_right = 367.0
+margin_left = 285.0
+margin_right = 305.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 20, 0 )
 
 [node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer"]
-margin_left = 371.0
-margin_right = 565.0
+margin_left = 309.0
+margin_right = 802.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 0, 80 )
 custom_fonts/font = SubResource( 2 )
-text = "Right Clic"
+text = "A , D o Izquierda , Derecha"
 align = 2
 valign = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-margin_left = 75.0
+margin_left = 243.0
 margin_top = 84.0
-margin_right = 709.0
+margin_right = 559.0
 margin_bottom = 164.0
 size_flags_horizontal = 4
 __meta__ = {
@@ -97,33 +95,33 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
-margin_right = 424.0
+margin_right = 138.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 0, 80 )
 custom_fonts/font = SubResource( 2 )
-text = "Rotate AntiClockWise"
+text = "Saltar"
 align = 2
 valign = 1
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 428.0
-margin_right = 448.0
+margin_left = 142.0
+margin_right = 162.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 20, 0 )
 
 [node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 452.0
-margin_right = 634.0
+margin_left = 166.0
+margin_right = 316.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 0, 80 )
 custom_fonts/font = SubResource( 2 )
-text = "Left Clic"
+text = "Espacio"
 valign = 1
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
-margin_left = 157.0
+margin_left = 192.0
 margin_top = 168.0
-margin_right = 626.0
+margin_right = 610.0
 margin_bottom = 248.0
 size_flags_horizontal = 4
 __meta__ = {
@@ -131,33 +129,33 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3"]
-margin_right = 271.0
+margin_right = 92.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 0, 80 )
 custom_fonts/font = SubResource( 2 )
-text = "Speed Up Game"
+text = "Dash"
 align = 2
 valign = 1
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer3"]
-margin_left = 275.0
-margin_right = 295.0
+margin_left = 96.0
+margin_right = 116.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 20, 0 )
 
 [node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer3"]
-margin_left = 299.0
-margin_right = 469.0
+margin_left = 120.0
+margin_right = 418.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 0, 80 )
 custom_fonts/font = SubResource( 2 )
-text = "Wheel Up"
+text = "SHIFT Izquierdo"
 valign = 1
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
-margin_left = 88.0
+margin_left = 300.0
 margin_top = 252.0
-margin_right = 695.0
+margin_right = 501.0
 margin_bottom = 332.0
 size_flags_horizontal = 4
 __meta__ = {
@@ -165,33 +163,33 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer4"]
-margin_right = 363.0
+margin_right = 150.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 0, 80 )
 custom_fonts/font = SubResource( 2 )
-text = "Speed Normal Game"
+text = "Pispear"
 valign = 1
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer4"]
-margin_left = 367.0
-margin_right = 387.0
+margin_left = 154.0
+margin_right = 174.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 20, 0 )
 
 [node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer4"]
-margin_left = 391.0
-margin_right = 607.0
+margin_left = 178.0
+margin_right = 201.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 0, 80 )
 custom_fonts/font = SubResource( 2 )
-text = "Wheel Down"
+text = "Q"
 align = 2
 valign = 1
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer"]
-margin_left = 309.0
+margin_left = 266.0
 margin_top = 336.0
-margin_right = 475.0
+margin_right = 536.0
 margin_bottom = 416.0
 size_flags_horizontal = 4
 __meta__ = {
@@ -199,22 +197,22 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer5"]
-margin_right = 115.0
+margin_right = 219.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 0, 80 )
 custom_fonts/font = SubResource( 2 )
-text = "Retry"
+text = "Reintentar"
 valign = 1
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer5"]
-margin_left = 119.0
-margin_right = 139.0
+margin_left = 223.0
+margin_right = 243.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 20, 0 )
 
 [node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer5"]
-margin_left = 143.0
-margin_right = 166.0
+margin_left = 247.0
+margin_right = 270.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 0, 80 )
 custom_fonts/font = SubResource( 2 )
@@ -223,9 +221,9 @@ align = 2
 valign = 1
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="VBoxContainer"]
-margin_left = 252.0
+margin_left = 209.0
 margin_top = 420.0
-margin_right = 531.0
+margin_right = 592.0
 margin_bottom = 500.0
 size_flags_horizontal = 4
 __meta__ = {
@@ -233,22 +231,22 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer6"]
-margin_right = 182.0
+margin_right = 286.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 0, 80 )
 custom_fonts/font = SubResource( 2 )
-text = "Main Menu"
+text = "Menu Principal"
 valign = 1
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer6"]
-margin_left = 186.0
-margin_right = 206.0
+margin_left = 290.0
+margin_right = 310.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 20, 0 )
 
 [node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer6"]
-margin_left = 210.0
-margin_right = 279.0
+margin_left = 314.0
+margin_right = 383.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 0, 80 )
 custom_fonts/font = SubResource( 2 )
@@ -257,9 +255,9 @@ align = 2
 valign = 1
 
 [node name="HBoxContainer7" type="HBoxContainer" parent="VBoxContainer"]
-margin_left = 206.0
+margin_left = 193.0
 margin_top = 504.0
-margin_right = 577.0
+margin_right = 608.0
 margin_bottom = 584.0
 size_flags_horizontal = 4
 __meta__ = {
@@ -267,22 +265,22 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer7"]
-margin_right = 320.0
+margin_right = 364.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 0, 80 )
 custom_fonts/font = SubResource( 2 )
-text = "Level Selection"
+text = "Seleccion de Nivel"
 valign = 1
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer7"]
-margin_left = 324.0
-margin_right = 344.0
+margin_left = 368.0
+margin_right = 388.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 20, 0 )
 
 [node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer7"]
-margin_left = 348.0
-margin_right = 371.0
+margin_left = 392.0
+margin_right = 415.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 0, 80 )
 custom_fonts/font = SubResource( 2 )

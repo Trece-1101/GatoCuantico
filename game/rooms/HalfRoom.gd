@@ -21,7 +21,8 @@ func color_spikes() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("peep") and not peeped and can_peep and is_scho_box:
 		peeped = true
-		blackout_animator.play_backwards("peep")
+		blackout_animator.play("peep")
+		Events.emit_signal("enable_player", false)
 
 func disable_blackout() -> void:
 	can_blackout = false
