@@ -6,6 +6,7 @@
 [ext_resource path="res://game/items/plants/PlantReference.tscn" type="PackedScene" id=4]
 
 [node name="Level2Tutorial" instance=ExtResource( 1 )]
+next_level = "res://game/levels/Tutorial/Level3Tutorial.tscn"
 
 [node name="Door" parent="HalfRoomRed" index="4"]
 position = Vector2( 1536, 576 )
@@ -37,4 +38,4 @@ margin_left = 840.0
 margin_top = 416.0
 margin_right = 1810.0
 margin_bottom = 916.0
-text_to_show = "text_two"
+text_index = 2

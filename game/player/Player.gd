@@ -6,8 +6,8 @@ export var gravity := 20.0
 export var jump_force := 400.0
 export var wall_jump_force := 600.0
 export var dash_force := 1500.0
-export var max_jumps := 1
 
+var max_jumps := 1 setget set_max_jumps
 var movement := Vector2.ZERO
 var jumps := 0
 var can_jump = true
@@ -17,6 +17,9 @@ var wall_jumped = false
 var dashed = false
 var input_enabled = false
 var alive = true
+
+func set_max_jumps(value: int) -> void:
+	max_jumps = value
 
 func set_can_wall_jump(value:bool) -> void:
 	can_wall_jump = value
