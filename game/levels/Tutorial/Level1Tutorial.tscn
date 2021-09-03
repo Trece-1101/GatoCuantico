@@ -19,8 +19,6 @@ position = Vector2( 1600, 576 )
 position = Vector2( 704, 576 )
 
 [node name="TutorialPanel" parent="." index="3" instance=ExtResource( 2 )]
-margin_left = 200.0
-margin_top = 56.0
 margin_right = 1168.0
 margin_bottom = 549.0
 text_to_show = "text_one"
