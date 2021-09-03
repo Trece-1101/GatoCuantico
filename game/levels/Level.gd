@@ -17,6 +17,7 @@ func connect_signals() -> void:
 	Events.connect("player_in_portal", self, "_on_player_in_portal")
 	Events.connect("time_out", self, "_on_time_out")
 	Events.connect("player_dead", self, "_on_player_dead")
+	camera_animations.connect("animation_finished", self, "_on_AnimationPlayer_animation_finished")
 
 func _on_change_level() -> void:
 	get_tree().change_scene(next_level)

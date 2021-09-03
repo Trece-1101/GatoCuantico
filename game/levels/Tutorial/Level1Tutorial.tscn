@@ -6,11 +6,17 @@
 [node name="Level1Tutorial" instance=ExtResource( 1 )]
 next_level = "res://game/levels/Tutorial/Level2Tutorial.tscn"
 
+[node name="HalfRoomRed" parent="." index="1"]
+can_peep = false
+
 [node name="Door" parent="HalfRoomRed" index="4"]
 position = Vector2( 1600, 576 )
 
 [node name="Player" parent="HalfRoomRed" index="5"]
 position = Vector2( 704, 576 )
+
+[node name="HalfRoomBlue" parent="." index="2"]
+can_peep = false
 
 [node name="Door" parent="HalfRoomBlue" index="4"]
 position = Vector2( 1600, 576 )

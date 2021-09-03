@@ -8,6 +8,10 @@
 [ext_resource path="res://game/danger/SpikeHigh.tscn" type="PackedScene" id=6]
 
 [node name="Level4Tutorial" instance=ExtResource( 1 )]
+next_level = "res://game/levels/Tutorial/Level5Tutorial.tscn"
+
+[node name="HalfRoomRed" parent="." index="1"]
+can_peep = false
 
 [node name="PowerUpDash" parent="HalfRoomRed" index="6" instance=ExtResource( 3 )]
 position = Vector2( 448, 497.4 )
@@ -26,6 +30,9 @@ position = Vector2( 1328, 575.995 )
 
 [node name="SpikeHigh4" parent="HalfRoomRed" index="11" instance=ExtResource( 6 )]
 position = Vector2( 1416, 575.995 )
+
+[node name="HalfRoomBlue" parent="." index="2"]
+can_peep = false
 
 [node name="PlantReference" parent="HalfRoomBlue" index="6" instance=ExtResource( 5 )]
 position = Vector2( 448, 576 )

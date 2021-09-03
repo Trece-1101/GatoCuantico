@@ -5,7 +5,7 @@ var win:bool
 
 func set_result(win_result:bool, pos:Vector2) -> void:
 	var dif_x := pos.x - 1056.0
-	global_position = Vector2(1056.0 + dif_x, 432.0)
+	global_position = Vector2(1056.0, 432.0)
 	win = win_result
 	if win_result:
 		$Container/Label.text = "SCHODI\nVIVE"

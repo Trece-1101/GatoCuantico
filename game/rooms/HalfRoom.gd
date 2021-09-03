@@ -2,6 +2,10 @@ extends Node2D
 
 onready var blackout_animator:AnimationPlayer = $BlackOut/AnimationPlayer
 export var can_blackout := true
+export var can_peep := true
+
+var peeped := false
+var is_scho_box := false
 
 func _ready() -> void:
 	Events.connect("player_in_portal", self, "_on_player_in_portal")
@@ -14,6 +18,10 @@ func color_spikes() -> void:
 		if child is Spike:
 			child.set_color(name)
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("peep") and not peeped and can_peep and is_scho_box:
+		peeped = true
+		blackout_animator.play_backwards("peep")
 
 func disable_blackout() -> void:
 	can_blackout = false
@@ -49,3 +57,5 @@ func _on_check_myself(other_name:String) -> void:
 	if other_name != name:
 		GameData.set_observable_player(get_my_player())
 		disable_blackout()
+	else:
+		is_scho_box = true
