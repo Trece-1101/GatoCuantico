@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/level.wav-dea9b818e1260b93efa95baa2042633b.sample"
+
+[deps]
+
+source_file="res://assets/sounds/sfx/level.wav"
+dest_files=[ "res://.import/level.wav-dea9b818e1260b93efa95baa2042633b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

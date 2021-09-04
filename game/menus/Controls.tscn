@@ -153,9 +153,9 @@ text = "SHIFT Izquierdo"
 valign = 1
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
-margin_left = 300.0
+margin_left = 277.0
 margin_top = 252.0
-margin_right = 501.0
+margin_right = 524.0
 margin_bottom = 332.0
 size_flags_horizontal = 4
 __meta__ = {
@@ -178,11 +178,11 @@ rect_min_size = Vector2( 20, 0 )
 
 [node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer4"]
 margin_left = 178.0
-margin_right = 201.0
+margin_right = 247.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 0, 80 )
 custom_fonts/font = SubResource( 2 )
-text = "Q"
+text = "TAB"
 align = 2
 valign = 1
 

@@ -26,3 +26,7 @@ func _on_Credits_pressed() -> void:
 func _on_Controls_pressed() -> void:
 	GameMusic.play_button()
 	get_tree().change_scene(controls_menu)
+
+
+func _on_PlayTut_pressed() -> void:
+	get_tree().change_scene("res://game/levels/Tutorial/Level1Tutorial.tscn")

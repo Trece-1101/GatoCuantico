@@ -22,7 +22,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("peep") and not peeped and can_peep and is_scho_box:
 		peeped = true
 		blackout_animator.play("peep")
-		Events.emit_signal("enable_player", false)
+		Events.emit_signal("peeping", false)
 
 func disable_blackout() -> void:
 	can_blackout = false
@@ -40,6 +40,7 @@ func dim_out() -> void:
 func give_black_out() -> void:
 	if not can_blackout:
 		return
+	GameMusic.play_select()
 	can_blackout = false
 	blackout_animator.play("fade_in")
 	get_node("Door").set_is_enable(false)

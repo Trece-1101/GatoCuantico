@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://game/menus/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/Fonts/Kenney Blocks.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/Fonts/Kenney Bold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://game/gui/Buttons/ButtonMenu.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 67
@@ -49,6 +51,12 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
 }
+
+[sub_resource type="DynamicFont" id=3]
+size = 13
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
 
 [node name="MainMenu" type="Node"]
 script = ExtResource( 1 )
@@ -102,9 +110,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BottomLeft" type="ColorRect" parent="."]
+[node name="ButtonsContainer" type="ColorRect" parent="."]
 anchor_right = 1.0
 margin_top = 240.0
+margin_bottom = 333.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BottomLeft" type="ColorRect" parent="."]
+anchor_right = 1.0
+margin_top = 320.0
 margin_right = -640.0
 margin_bottom = 720.0
 color = Color( 0, 0, 0, 1 )
@@ -115,7 +132,7 @@ __meta__ = {
 [node name="BottomRight" type="ColorRect" parent="."]
 anchor_right = 1.0
 margin_left = 640.0
-margin_top = 240.0
+margin_top = 320.0
 margin_bottom = 720.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
@@ -125,3 +142,37 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "play"
 anims/play = SubResource( 2 )
+
+[node name="Quit" parent="." instance=ExtResource( 4 )]
+margin_left = 1048.0
+margin_top = 256.0
+margin_right = 1248.0
+margin_bottom = 318.0
+text = "Salir"
+
+[node name="Controls" parent="." instance=ExtResource( 4 )]
+margin_left = 544.0
+margin_right = 776.0
+text = "Controles"
+
+[node name="Credits" parent="." instance=ExtResource( 4 )]
+margin_left = 792.0
+margin_right = 1024.0
+text = "Creditos"
+
+[node name="Play" parent="." instance=ExtResource( 4 )]
+margin_left = 296.0
+margin_right = 528.0
+text = "Jugar"
+
+[node name="PlayTut" parent="." instance=ExtResource( 4 )]
+margin_left = 32.0
+margin_right = 276.0
+custom_fonts/font = SubResource( 3 )
+text = "Jugar  con  tutorial"
+
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Controls" to="." method="_on_Controls_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="PlayTut" to="." method="_on_PlayTut_pressed"]

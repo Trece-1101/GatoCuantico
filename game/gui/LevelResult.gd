@@ -28,4 +28,4 @@ func _on_Button_pressed() -> void:
 
 
 func _on_ButtonMenu_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene("res://game/menus/MainMenu.tscn")

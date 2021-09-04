@@ -22,6 +22,12 @@ func stop_all_music() -> void:
 func play_button() -> void:
 	$ButtonSound.play()
 
+func play_select() -> void:
+	$SelectSound.play()
+
+func play_result() -> void:
+	$ResultSound.play()
+
 func play_win() -> void:
 	$Win.play()
 

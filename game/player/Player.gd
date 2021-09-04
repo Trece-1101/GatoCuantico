@@ -36,7 +36,7 @@ func _ready() -> void:
 	Events.connect("half_room_selected", self, "_on_room_selected")
 	Events.connect("enable_player", self, "_on_room_selected")
 	Events.connect("player_entering_portal", self, "disabled_player")
-	Events.connect("enable_player", self, "set_input_enabled")
+	Events.connect("peeping", self, "set_input_enabled")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not input_enabled:
@@ -93,6 +93,7 @@ func manage_jump() -> void:
 		movement = Vector2($WallDetectors.get_dir() * wall_jump_force, -jump_force * 0.6)
 		wall_jumped = true
 		$AnimatedSprite.play("jump")
+		$JumpSFX.play()
 		return
 	
 	if can_jump:
@@ -101,11 +102,13 @@ func manage_jump() -> void:
 		jumps += 1
 		can_jump = (max_jumps - jumps)
 		$AnimatedSprite.play("jump")
+		$JumpSFX.play()
 		return
 
 func dash() -> void:
 	dashed = true
 	movement = Vector2.ZERO
+	$DashSFX.play()
 	$TweenDash.interpolate_property(
 		self,
 		"movement:x",
@@ -116,6 +119,7 @@ func dash() -> void:
 	$TweenDash.start()
 
 func enter_portal(center:Vector2) -> void:
+	GameMusic.play_result()
 	Events.emit_signal("player_entering_portal")
 	player_enabled(false)
 	$AnimatedSprite.play("idle")
@@ -162,6 +166,7 @@ func die() -> void:
 	rotation_degrees = 90
 	$AnimatedSprite.play("dead")
 	if GameData.get_observable_player() == self:
+		$HurtSFX.play()
 		Events.emit_signal("player_dead", true)
 	else:
 		Events.emit_signal("player_dead", false)

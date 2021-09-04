@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Blip_select.ogg-21a6fd8dfa3852a6cc80f19f5577af2a.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/sfx/Blip_select.ogg"
+dest_files=[ "res://.import/Blip_select.ogg-21a6fd8dfa3852a6cc80f19f5577af2a.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

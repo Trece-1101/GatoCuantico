@@ -9,6 +9,8 @@ var schodi_dead := false
 onready var camera_animations := $CameraLevel/AnimationPlayer
 
 func _ready() -> void:
+	if GameMusic.get_music_playing() != "level":
+		GameMusic.play_music("level")
 	connect_signals()
 	camera_animations.play_backwards("fade_in")
 
