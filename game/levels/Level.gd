@@ -3,6 +3,7 @@ extends Node
 export(String, FILE, "*.tscn") var next_level = ""
 export var auto_enable_player := false
 export var result_panel:PackedScene = null
+export var is_tutorial := false
 
 var schodi_dead := false
 
@@ -13,6 +14,7 @@ func _ready() -> void:
 		GameMusic.play_music("level")
 	connect_signals()
 	camera_animations.play_backwards("fade_in")
+	$UI.set_level_text(self.name)
 
 func connect_signals() -> void:
 	Events.connect("change_level", self, "_on_change_level")
@@ -22,6 +24,8 @@ func connect_signals() -> void:
 	camera_animations.connect("animation_finished", self, "_on_AnimationPlayer_animation_finished")
 
 func _on_change_level() -> void:
+	if not is_tutorial:
+		GameData.new_unlock_level()
 	get_tree().change_scene(next_level)
 
 func _on_player_in_portal() -> void:

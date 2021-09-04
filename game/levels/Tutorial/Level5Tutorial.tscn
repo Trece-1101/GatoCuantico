@@ -8,6 +8,7 @@
 
 [node name="Level5Tutorial" instance=ExtResource( 1 )]
 next_level = "res://game/levels/Tutorial/Level6Tutorial.tscn"
+is_tutorial = true
 
 [node name="HalfRoomRed" parent="." index="1"]
 can_peep = false

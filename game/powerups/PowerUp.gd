@@ -15,9 +15,10 @@ func _ready() -> void:
 
 func _on_PlayerDetector_body_entered(body: Node) -> void:
 	$AnimationPlayer.play("consume")
-	$PickUpSFX.play()
 	$PlayerDetector/CollisionShape2D.set_deferred("disabled", true)
 	var player:Player = body
+	if player == GameData.get_observable_player():
+		$PickUpSFX.play()
 	give_power(player)
 
 func give_power(player: Player) -> void:

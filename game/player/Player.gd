@@ -93,7 +93,8 @@ func manage_jump() -> void:
 		movement = Vector2($WallDetectors.get_dir() * wall_jump_force, -jump_force * 0.6)
 		wall_jumped = true
 		$AnimatedSprite.play("jump")
-		$JumpSFX.play()
+		if check_if_observable():
+			$JumpSFX.play()
 		return
 	
 	if can_jump:
@@ -102,13 +103,15 @@ func manage_jump() -> void:
 		jumps += 1
 		can_jump = (max_jumps - jumps)
 		$AnimatedSprite.play("jump")
-		$JumpSFX.play()
+		if check_if_observable():
+			$JumpSFX.play()
 		return
 
 func dash() -> void:
 	dashed = true
 	movement = Vector2.ZERO
-	$DashSFX.play()
+	if check_if_observable():
+		$DashSFX.play()
 	$TweenDash.interpolate_property(
 		self,
 		"movement:x",
@@ -165,8 +168,11 @@ func die() -> void:
 	input_enabled = false
 	rotation_degrees = 90
 	$AnimatedSprite.play("dead")
-	if GameData.get_observable_player() == self:
+	if check_if_observable():
 		$HurtSFX.play()
 		Events.emit_signal("player_dead", true)
 	else:
 		Events.emit_signal("player_dead", false)
+
+func check_if_observable() -> bool:
+	return GameData.get_observable_player() == self
