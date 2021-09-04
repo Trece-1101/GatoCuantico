@@ -14,7 +14,8 @@ func _ready() -> void:
 		GameMusic.play_music("level")
 	connect_signals()
 	camera_animations.play_backwards("fade_in")
-	$UI.set_level_text(self.name)
+	if not is_tutorial:
+		$UI.set_level_text(self.name)
 
 func connect_signals() -> void:
 	Events.connect("change_level", self, "_on_change_level")

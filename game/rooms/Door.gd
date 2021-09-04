@@ -11,4 +11,5 @@ func _on_PlayerDetector_body_entered(_body: Node) -> void:
 
 func _on_DoorCollider_body_entered(body: Node) -> void:
 	$DoorCollider/CollisionShape2D.set_deferred("disabled", true)
-	body.enter_portal(global_position - Vector2(0.0, 64.0))
+	if body.get_is_alive():
+		body.enter_portal(global_position - Vector2(0.0, 64.0))

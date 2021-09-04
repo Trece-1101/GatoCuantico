@@ -16,7 +16,7 @@ var can_dash = false setget set_can_dash
 var wall_jumped = false
 var dashed = false
 var input_enabled = false setget set_input_enabled
-var alive = true
+var alive = true setget ,get_is_alive
 
 func set_max_jumps(value: int) -> void:
 	max_jumps = value
@@ -29,6 +29,9 @@ func set_can_dash(value:bool) -> void:
 
 func set_input_enabled(value: bool) -> void:
 	input_enabled = value
+
+func get_is_alive() -> bool:
+	return alive
 
 func _ready() -> void:
 	$AnimatedSprite.play("idle")

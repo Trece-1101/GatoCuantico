@@ -1,5 +1,158 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://game/levels/LevelGameBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/powerups/PowerUpDoubleJump.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/danger/SpikeLow.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/danger/SpikeHigh.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/items/plants/PlantReference.tscn" type="PackedScene" id=5]
 
 [node name="Level8" instance=ExtResource( 1 )]
+next_level = "res://game/levels/Level9.tscn"
+
+[node name="TileMapRed" parent="HalfRoomRed" index="0"]
+tile_data = PoolIntArray( -1, 1610612739, 0, -65536, 1610612739, 0, -65535, 1610612739, 0, -65534, 1610612739, 0, -65533, 1610612739, 0, -65532, 1610612739, 0, -65531, 1610612739, 0, -65530, 1610612739, 0, -65529, 1610612739, 0, -65528, 1610612739, 0, -65527, 1610612739, 0, -65526, 1610612739, 0, -65525, 1610612739, 0, -65524, 1610612739, 0, -65523, 1610612739, 0, -65522, 1610612739, 0, -65521, 1610612739, 0, -65520, 1610612739, 0, -65519, 1610612739, 0, -65518, 1610612739, 0, -65517, 1610612739, 0, -65516, 1610612739, 0, -65515, 1610612739, 0, -65514, 1610612739, 0, -65513, 1610612739, 0, -65512, 1610612739, 0, -65511, 1610612739, 0, -65510, 1610612739, 0, -65509, 1610612739, 0, -65508, 1610612739, 0, -65507, 1610612739, 0, -65506, 1610612739, 0, -65505, 1610612739, 0, -65504, 1610612739, 0, -65503, 1610612739, 0, -65502, 1610612739, 0, -65501, 1610612739, 0, -65500, 1610612739, 0, -65499, 1610612739, 0, -65498, 1610612739, 0, -65497, 1610612739, 0, -65496, 1610612739, 0, 65535, 1610612739, 0, 20, 3, 0, 21, 3, 0, 40, 1610612739, 0, 131071, 1610612739, 0, 65556, 3, 0, 65557, 3, 0, 65576, 1610612739, 0, 196607, 1610612739, 0, 131092, 3, 0, 131093, 3, 0, 131112, 1610612739, 0, 262143, 1610612739, 0, 196628, 3, 0, 196629, 3, 0, 196648, 1610612739, 0, 327679, 1610612739, 0, 262164, 3, 0, 262165, 3, 0, 262184, 1610612739, 0, 393215, 1610612739, 0, 327700, 3, 0, 327701, 3, 0, 327715, 0, 0, 327716, 4, 0, 327717, 5, 0, 327720, 1610612739, 0, 458751, 1610612739, 0, 393236, 1610612741, 0, 393237, 1610612736, 0, 393256, 1610612739, 0, 524287, 1610612739, 0, 458781, 0, 0, 458782, 4, 0, 458783, 5, 0, 458791, 0, 0, 458792, 1610612739, 0, 589823, 1610612739, 0, 524317, 2, 0, 524318, 2, 0, 524319, 2, 0, 524327, 2, 0, 524328, 1610612739, 0, 655359, 1610612739, 0, 589824, 0, 0, 589825, 4, 0, 589826, 4, 0, 589827, 4, 0, 589828, 4, 0, 589829, 4, 0, 589830, 4, 0, 589831, 4, 0, 589832, 4, 0, 589833, 4, 0, 589834, 4, 0, 589835, 4, 0, 589836, 4, 0, 589837, 4, 0, 589838, 4, 0, 589839, 4, 0, 589840, 4, 0, 589841, 4, 0, 589842, 4, 0, 589843, 4, 0, 589844, 4, 0, 589845, 4, 0, 589846, 4, 0, 589847, 4, 0, 589848, 4, 0, 589849, 4, 0, 589850, 4, 0, 589851, 4, 0, 589852, 4, 0, 589853, 2, 0, 589854, 1610612739, 0, 589855, 2, 0, 589856, 4, 0, 589857, 4, 0, 589858, 4, 0, 589859, 4, 0, 589860, 4, 0, 589861, 4, 0, 589862, 4, 0, 589863, 5, 0, 589864, 1610612739, 0, 720895, 1610612739, 0, 655360, 3, 0, 655361, 3, 0, 655362, 3, 0, 655363, 3, 0, 655364, 3, 0, 655365, 3, 0, 655366, 3, 0, 655367, 3, 0, 655368, 3, 0, 655369, 3, 0, 655370, 3, 0, 655371, 3, 0, 655372, 3, 0, 655373, 3, 0, 655374, 3, 0, 655375, 3, 0, 655376, 3, 0, 655377, 3, 0, 655378, 3, 0, 655379, 3, 0, 655380, 3, 0, 655381, 3, 0, 655382, 3, 0, 655383, 3, 0, 655384, 3, 0, 655385, 3, 0, 655386, 3, 0, 655387, 3, 0, 655388, 3, 0, 655389, 3, 0, 655390, 3, 0, 655391, 3, 0, 655392, 3, 0, 655393, 3, 0, 655394, 3, 0, 655395, 3, 0, 655396, 3, 0, 655397, 3, 0, 655398, 3, 0, 655399, 3, 0, 655400, 1610612739, 0 )
+
+[node name="Door" parent="HalfRoomRed" index="4"]
+position = Vector2( 130.528, 576 )
+
+[node name="Player" parent="HalfRoomRed" index="5"]
+position = Vector2( 2368, 576 )
+
+[node name="PowerUpDoubleJump" parent="HalfRoomRed" index="6" instance=ExtResource( 2 )]
+position = Vector2( 2296, 448 )
+
+[node name="SpikeLow" parent="HalfRoomRed" index="7" instance=ExtResource( 3 )]
+position = Vector2( 1912, 448 )
+
+[node name="SpikeLow7" parent="HalfRoomRed" index="8" instance=ExtResource( 3 )]
+position = Vector2( 2336, 319.612 )
+
+[node name="SpikeLow3" parent="HalfRoomRed" index="9" instance=ExtResource( 3 )]
+position = Vector2( 1408, 160 )
+rotation = 1.5708
+
+[node name="SpikeLow4" parent="HalfRoomRed" index="10" instance=ExtResource( 3 )]
+position = Vector2( 1408, 232 )
+rotation = 1.5708
+
+[node name="SpikeLow5" parent="HalfRoomRed" index="11" instance=ExtResource( 3 )]
+position = Vector2( 1408, 304 )
+rotation = 1.5708
+
+[node name="SpikeLow6" parent="HalfRoomRed" index="12" instance=ExtResource( 3 )]
+position = Vector2( 1408, 376 )
+rotation = 1.5708
+
+[node name="SpikeLow2" parent="HalfRoomRed" index="13" instance=ExtResource( 3 )]
+position = Vector2( 1992, 448 )
+
+[node name="SpikeHigh11" parent="HalfRoomRed" index="14" instance=ExtResource( 4 )]
+position = Vector2( 864, 576 )
+
+[node name="SpikeHigh12" parent="HalfRoomRed" index="15" instance=ExtResource( 4 )]
+position = Vector2( 672, 576 )
+
+[node name="SpikeHigh13" parent="HalfRoomRed" index="16" instance=ExtResource( 4 )]
+position = Vector2( 480, 576 )
+
+[node name="SpikeHigh14" parent="HalfRoomRed" index="17" instance=ExtResource( 4 )]
+position = Vector2( 288, 576 )
+
+[node name="PlantReference" parent="HalfRoomRed" index="18" instance=ExtResource( 5 )]
+position = Vector2( 736, 575.995 )
+
+[node name="PlantReference2" parent="HalfRoomRed" index="19" instance=ExtResource( 5 )]
+position = Vector2( 928, 575.995 )
+
+[node name="PlantReference5" parent="HalfRoomRed" index="20" instance=ExtResource( 5 )]
+position = Vector2( 1256, 575.995 )
+
+[node name="PlantReference6" parent="HalfRoomRed" index="21" instance=ExtResource( 5 )]
+position = Vector2( 1344, 575.995 )
+
+[node name="PlantReference8" parent="HalfRoomRed" index="22" instance=ExtResource( 5 )]
+position = Vector2( 1432, 575.995 )
+
+[node name="PlantReference9" parent="HalfRoomRed" index="23" instance=ExtResource( 5 )]
+position = Vector2( 1520, 575.995 )
+
+[node name="PlantReference10" parent="HalfRoomRed" index="24" instance=ExtResource( 5 )]
+position = Vector2( 1608, 575.995 )
+
+[node name="PlantReference7" parent="HalfRoomRed" index="25" instance=ExtResource( 5 )]
+position = Vector2( 1696, 575.995 )
+
+[node name="PlantReference3" parent="HalfRoomRed" index="26" instance=ExtResource( 5 )]
+position = Vector2( 544, 575.995 )
+
+[node name="PlantReference4" parent="HalfRoomRed" index="27" instance=ExtResource( 5 )]
+position = Vector2( 352, 575.995 )
+
+[node name="TileMapBlue" parent="HalfRoomBlue" index="0"]
+tile_data = PoolIntArray( -1, 1610612738, 0, -65536, 1610612738, 0, -65535, 1610612738, 0, -65534, 1610612738, 0, -65533, 1610612738, 0, -65532, 1610612738, 0, -65531, 1610612738, 0, -65530, 1610612738, 0, -65529, 1610612738, 0, -65528, 1610612738, 0, -65527, 1610612738, 0, -65526, 1610612738, 0, -65525, 1610612738, 0, -65524, 1610612738, 0, -65523, 1610612738, 0, -65522, 1610612738, 0, -65521, 1610612738, 0, -65520, 1610612738, 0, -65519, 1610612738, 0, -65518, 1610612738, 0, -65517, 1610612738, 0, -65516, 1610612738, 0, -65515, 1610612738, 0, -65514, 1610612738, 0, -65513, 1610612738, 0, -65512, 1610612738, 0, -65511, 1610612738, 0, -65510, 1610612738, 0, -65509, 1610612738, 0, -65508, 1610612738, 0, -65507, 1610612738, 0, -65506, 1610612738, 0, -65505, 1610612738, 0, -65504, 1610612738, 0, -65503, 1610612738, 0, -65502, 1610612738, 0, -65501, 1610612738, 0, -65500, 1610612738, 0, -65499, 1610612738, 0, -65498, 1610612738, 0, -65497, 1610612738, 0, -65496, 1610612738, 0, 65535, 2, 0, 40, 2, 0, 131071, 2, 0, 65576, 2, 0, 196607, 2, 0, 131112, 2, 0, 262143, 2, 0, 196648, 2, 0, 327679, 2, 0, 262184, 2, 0, 393215, 2, 0, 327720, 2, 0, 458751, 2, 0, 393256, 2, 0, 524287, 2, 0, 458792, 2, 0, 589823, 2, 0, 524317, 3, 0, 524318, 4, 0, 524319, 5, 0, 524328, 2, 0, 655359, 2, 0, 589824, 3, 0, 589825, 4, 0, 589826, 4, 0, 589827, 4, 0, 589828, 4, 0, 589829, 4, 0, 589830, 4, 0, 589831, 4, 0, 589832, 4, 0, 589833, 4, 0, 589834, 4, 0, 589835, 4, 0, 589836, 4, 0, 589837, 4, 0, 589838, 4, 0, 589839, 4, 0, 589840, 4, 0, 589841, 4, 0, 589842, 4, 0, 589843, 4, 0, 589844, 4, 0, 589845, 4, 0, 589846, 4, 0, 589847, 4, 0, 589848, 4, 0, 589849, 4, 0, 589850, 4, 0, 589851, 4, 0, 589852, 4, 0, 589853, 1, 0, 589854, 1, 0, 589855, 1, 0, 589856, 4, 0, 589857, 4, 0, 589858, 4, 0, 589859, 4, 0, 589860, 4, 0, 589861, 4, 0, 589862, 4, 0, 589863, 5, 0, 589864, 2, 0, 720895, 2, 0, 655360, 2, 0, 655361, 2, 0, 655362, 2, 0, 655363, 2, 0, 655364, 2, 0, 655365, 2, 0, 655366, 2, 0, 655367, 2, 0, 655368, 2, 0, 655369, 2, 0, 655370, 2, 0, 655371, 2, 0, 655372, 2, 0, 655373, 2, 0, 655374, 2, 0, 655375, 2, 0, 655376, 2, 0, 655377, 2, 0, 655378, 2, 0, 655379, 2, 0, 655380, 2, 0, 655381, 2, 0, 655382, 2, 0, 655383, 2, 0, 655384, 2, 0, 655385, 2, 0, 655386, 2, 0, 655387, 2, 0, 655388, 2, 0, 655389, 2, 0, 655390, 2, 0, 655391, 2, 0, 655392, 2, 0, 655393, 2, 0, 655394, 2, 0, 655395, 2, 0, 655396, 2, 0, 655397, 2, 0, 655398, 2, 0, 655399, 2, 0, 655400, 2, 0 )
+
+[node name="Door" parent="HalfRoomBlue" index="4"]
+position = Vector2( 130.528, 576 )
+
+[node name="Player2" parent="HalfRoomBlue" index="5"]
+position = Vector2( 2368, 576 )
+
+[node name="PowerUpDoubleJump" parent="HalfRoomBlue" index="6" instance=ExtResource( 2 )]
+position = Vector2( 2424, 448 )
+
+[node name="SpikeHigh" parent="HalfRoomBlue" index="7" instance=ExtResource( 4 )]
+position = Vector2( 1696, 576 )
+
+[node name="SpikeHigh2" parent="HalfRoomBlue" index="8" instance=ExtResource( 4 )]
+position = Vector2( 1608, 576 )
+
+[node name="SpikeHigh3" parent="HalfRoomBlue" index="9" instance=ExtResource( 4 )]
+position = Vector2( 1520, 576 )
+
+[node name="SpikeHigh4" parent="HalfRoomBlue" index="10" instance=ExtResource( 4 )]
+position = Vector2( 1432, 576 )
+
+[node name="SpikeHigh5" parent="HalfRoomBlue" index="11" instance=ExtResource( 4 )]
+position = Vector2( 1344, 576 )
+
+[node name="SpikeHigh6" parent="HalfRoomBlue" index="12" instance=ExtResource( 4 )]
+position = Vector2( 1256, 576 )
+
+[node name="SpikeHigh7" parent="HalfRoomBlue" index="13" instance=ExtResource( 4 )]
+position = Vector2( 928, 576 )
+
+[node name="SpikeHigh11" parent="HalfRoomBlue" index="14" instance=ExtResource( 4 )]
+position = Vector2( 1888, 512 )
+
+[node name="SpikeHigh12" parent="HalfRoomBlue" index="15" instance=ExtResource( 4 )]
+position = Vector2( 1952, 512 )
+
+[node name="SpikeHigh13" parent="HalfRoomBlue" index="16" instance=ExtResource( 4 )]
+position = Vector2( 2016, 512 )
+
+[node name="SpikeHigh8" parent="HalfRoomBlue" index="17" instance=ExtResource( 4 )]
+position = Vector2( 736, 576 )
+
+[node name="SpikeHigh9" parent="HalfRoomBlue" index="18" instance=ExtResource( 4 )]
+position = Vector2( 544, 576 )
+
+[node name="SpikeHigh10" parent="HalfRoomBlue" index="19" instance=ExtResource( 4 )]
+position = Vector2( 352, 576 )
+
+[node name="PlantReference" parent="HalfRoomBlue" index="20" instance=ExtResource( 5 )]
+position = Vector2( 2336, 575.995 )
+
+[node name="PlantReference2" parent="HalfRoomBlue" index="21" instance=ExtResource( 5 )]
+position = Vector2( 864, 575.77 )
+
+[node name="PlantReference3" parent="HalfRoomBlue" index="22" instance=ExtResource( 5 )]
+position = Vector2( 672, 575.77 )
+
+[node name="PlantReference4" parent="HalfRoomBlue" index="23" instance=ExtResource( 5 )]
+position = Vector2( 480, 575.77 )
+
+[node name="PlantReference5" parent="HalfRoomBlue" index="24" instance=ExtResource( 5 )]
+position = Vector2( 293.478, 575.77 )
+
+[editable path="HalfRoomRed"]
+[editable path="HalfRoomBlue"]

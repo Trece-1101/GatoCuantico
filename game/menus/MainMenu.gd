@@ -16,6 +16,8 @@ var texts := [
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	reset_text($BottomLeft/Label)
+	reset_text($BottomRight/Label)
 	if GameMusic.get_music_playing() != "menu":
 		GameMusic.play_music("menu")
 
@@ -53,12 +55,22 @@ func _on_BottomRight_mouse_entered() -> void:
 func give_text(label:Label) -> void:
 	if counter >= texts.size():
 		counter = 0
+	label.modulate = Color.black
 	label.text = texts[counter]
 	counter += 1
 
+func end_text() -> bool:
+	return counter >= texts.size()
+
+func reset_text(label:Label) -> void:
+	label.modulate = Color.white
+	label.text = "Observar"
+
+
 func _on_BottomLeft_mouse_exited() -> void:
 	$BottomLeft.color = Color.black
-
+	reset_text($BottomLeft/Label)
 
 func _on_BottomRight_mouse_exited() -> void:
 	$BottomRight.color = Color.black
+	reset_text($BottomRight/Label)

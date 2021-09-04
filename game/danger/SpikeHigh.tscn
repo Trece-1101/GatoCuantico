@@ -17,7 +17,6 @@ scale = Vector2( 1, 1.2 )
 texture = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
-polygon = PoolVector2Array( -29.6928, -0.406654, 30.2394, -0.219368, 20.8854, -33.0399, -21.0107, -33.0399 )
+polygon = PoolVector2Array( -27.8459, -0.0991707, 28, 0, 20, -32, -20, -32 )
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
